@@ -1,6 +1,6 @@
 package com.example.RecipeGeneratorBackEnd;
 
-import com.example.RecipeGeneratorBackEnd.models.Ingredient;
+import com.example.RecipeGeneratorBackEnd.models.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,13 +12,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class IngredientTest {
-    @Autowired
+
     Ingredient ingredient;
+
+    Recipe recipe;
 
 
     @Before
     public void before() {
-        ingredient = new Ingredient("Paprika","gr", 2.5);
+        recipe = new Recipe("Lentils soup", "Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
+        ingredient = new Ingredient("Paprika","gr", 2.5, recipe);
+
     }
 
     @Test
@@ -34,6 +38,11 @@ public class IngredientTest {
     @Test
     public void ingredientHasValue() {
         assertEquals(2.5, ingredient.getValue(), 0);
+    }
+
+    @Test
+    public void ingredientHasRecipe() {
+        assertEquals(recipe, ingredient.getRecipe());
     }
 
 }
