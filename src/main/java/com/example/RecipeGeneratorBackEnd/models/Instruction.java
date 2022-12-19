@@ -1,5 +1,6 @@
 package com.example.RecipeGeneratorBackEnd.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,9 +17,15 @@ public class Instruction {
     @Column(name = "description")
     private String description;
 
-    public Instruction(int step, String description) {
+    @JsonIgnoreProperties({"instructions"})
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
+    private Recipe recipe;
+
+    public Instruction(int step, String description, Recipe recipe) {
         this.step = step;
         this.description = description;
+        this.recipe = recipe;
     }
 
     public Instruction() {}
