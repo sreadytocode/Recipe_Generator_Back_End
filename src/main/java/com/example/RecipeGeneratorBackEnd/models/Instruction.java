@@ -53,4 +53,12 @@ public class Instruction {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
 }
