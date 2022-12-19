@@ -1,6 +1,7 @@
 package com.example.RecipeGeneratorBackEnd.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -20,10 +21,16 @@ public class Ingredient {
     @Column(name = "value")
     private double value;
 
-    public Ingredient(String name, String unit, double value) {
+    @JsonIgnoreProperties({"ingredients"})
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
+    private Recipe recipe;
+
+    public Ingredient(String name, String unit, double value, Recipe recipe) {
         this.name = name;
         this.unit = unit;
         this.value = value;
+        this.recipe = recipe;
     }
 
     public Ingredient() {}
@@ -58,5 +65,13 @@ public class Ingredient {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }
