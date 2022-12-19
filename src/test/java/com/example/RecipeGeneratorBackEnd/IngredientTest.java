@@ -2,12 +2,15 @@ package com.example.RecipeGeneratorBackEnd;
 
 import com.example.RecipeGeneratorBackEnd.models.Ingredient;
 import jakarta.persistence.criteria.CriteriaBuilder;
+
 import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest
 public class IngredientTest {
 
     Ingredient ingredient;
