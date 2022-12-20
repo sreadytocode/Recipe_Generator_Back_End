@@ -32,11 +32,12 @@ public class Recipe {
     MealType mealType;
 
     @JsonIgnoreProperties({"recipe"})
-    @OneToMany(mappedBy = "recipe_id", fetch = FetchType.LAZY)
-    private List<Ingredient> ingredients;
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    private List<Quantity> quantities;
 
-    @OneToMany(mappedBy = "recipe_id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Instruction> instructions;
+
     public Recipe(String recipeName, String recipeDescription, int serving, double rating,
             DietType dietType, CuisineType cuisineType, MealType mealType) {
         this.recipeName = recipeName;
@@ -46,7 +47,7 @@ public class Recipe {
         this.dietType = dietType;
         this.cuisineType = cuisineType;
         this.mealType = mealType;
-        this.ingredients = new ArrayList<>();
+        this.quantities = new ArrayList<>();
         this.instructions = new ArrayList<>();
     }
 
@@ -114,13 +115,19 @@ public class Recipe {
         this.mealType = mealType;
     }
 
-    public List<Ingredient> getIngredients() {
-        return ingredients;
+    public List<Quantity> getQuantities() {
+        return quantities;
     }
 
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
+    public void setQuantities(List<Quantity> quantities) {
+        this.quantities = quantities;
     }
 
+    public List<Instruction> getInstructions() {
+        return instructions;
+    }
 
+    public void setInstructions(List<Instruction> instructions) {
+        this.instructions = instructions;
+    }
 }

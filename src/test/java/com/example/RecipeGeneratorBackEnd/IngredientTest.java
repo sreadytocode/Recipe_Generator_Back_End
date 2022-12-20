@@ -17,11 +17,14 @@ public class IngredientTest {
 
     Recipe recipe;
 
+    Quantity quantity;
+
 
     @Before
     public void before() {
+        quantity = new Quantity(2.5, "gr", ingredient, recipe);
         recipe = new Recipe("Lentils soup", "Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
-        ingredient = new Ingredient("Paprika","gr", 2.5, recipe);
+        ingredient = new Ingredient("Paprika","gr", 2.5);
 
     }
 
@@ -40,9 +43,5 @@ public class IngredientTest {
         assertEquals(2.5, ingredient.getValue(), 0);
     }
 
-    @Test
-    public void ingredientHasRecipe() {
-        assertEquals(recipe, ingredient.getRecipe());
-    }
 
 }

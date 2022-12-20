@@ -17,7 +17,7 @@ public class RecipeTest {
     @Before
     public void before(){
         instruction = new Instruction(1, "Pre-heat the oven.200c.", recipe);
-        ingredient = new Ingredient("Paprika","gr", 2.5, recipe);
+        ingredient = new Ingredient("Paprika","gr", 2.5);
         recipe = new Recipe("Lentils soup", "Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
     }
 
