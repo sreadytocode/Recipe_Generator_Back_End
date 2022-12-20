@@ -4,6 +4,9 @@ package com.example.RecipeGeneratorBackEnd.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "ingredients")
 public class Ingredient {
@@ -22,15 +25,15 @@ public class Ingredient {
     private double value;
 
     @JsonIgnoreProperties({"ingredients"})
-    @ManyToOne
-    @JoinColumn(name = "recipe_id", nullable = false)
-    private Recipe recipe;
+    @OneToMany(mappedBy = "ingredients_id", fetch = FetchType.LAZY)
+    private List<Quantity> quantities;
 
-    public Ingredient(String name, String unit, double value, Recipe recipe) {
+
+    public Ingredient(String name, String unit, double value) {
         this.name = name;
         this.unit = unit;
         this.value = value;
-        this.recipe = recipe;
+        this.quantities = new ArrayList<Quantity>();
     }
 
     public Ingredient() {}
@@ -67,11 +70,11 @@ public class Ingredient {
         this.value = value;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
+    public List<Quantity> getQuantities() {
+        return quantities;
     }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
+    public void setQuantities(List<Quantity> quantities) {
+        this.quantities = quantities;
     }
 }
