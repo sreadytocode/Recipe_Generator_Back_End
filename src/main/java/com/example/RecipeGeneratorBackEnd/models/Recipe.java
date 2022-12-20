@@ -32,10 +32,10 @@ public class Recipe {
     MealType mealType;
 
     @JsonIgnoreProperties({"recipe"})
-    @OneToMany(mappedBy = "recipe_id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Quantity> quantities;
 
-    @OneToMany(mappedBy = "recipe_id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Instruction> instructions;
 
     public Recipe(String recipeName, String recipeDescription, int serving, double rating,

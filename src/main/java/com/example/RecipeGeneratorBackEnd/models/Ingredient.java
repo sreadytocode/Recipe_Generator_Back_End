@@ -25,7 +25,7 @@ public class Ingredient {
     private double value;
 
     @JsonIgnoreProperties({"ingredients"})
-    @OneToMany(mappedBy = "ingredients_id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
     private List<Quantity> quantities;
 
 
