@@ -14,7 +14,7 @@ public class Instruction {
     @Column(name = "step")
     private int step;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "LONGTEXT")
     private String description;
 
     @JsonIgnoreProperties({"instructions"})

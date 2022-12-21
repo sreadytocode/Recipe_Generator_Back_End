@@ -18,7 +18,7 @@ public class QuantityTest {
     @Before
     public void before() {
         recipe = new Recipe("Lentils soup", "Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
-        ingredient = new Ingredient("Paprika","gr", 2.5);
+        ingredient = new Ingredient("Paprika");
         quantity = new Quantity(2.5, "gr", ingredient, recipe);
     }
 

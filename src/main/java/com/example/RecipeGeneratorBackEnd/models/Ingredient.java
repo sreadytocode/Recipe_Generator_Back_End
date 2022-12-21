@@ -18,21 +18,13 @@ public class Ingredient {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "unit")
-    private String unit;
-
-    @Column(name = "value")
-    private double value;
-
     @JsonIgnoreProperties({"ingredients"})
     @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
     private List<Quantity> quantities;
 
 
-    public Ingredient(String name, String unit, double value) {
+    public Ingredient(String name) {
         this.name = name;
-//        this.unit = unit;
-//        this.value = value;
         this.quantities = new ArrayList<Quantity>();
     }
 
@@ -52,22 +44,6 @@ public class Ingredient {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
     }
 
     public List<Quantity> getQuantities() {
