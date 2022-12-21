@@ -30,67 +30,110 @@ public class DataLoader implements ApplicationRunner {
         Recipe recipe1 = new Recipe("Healthy Sausage Casserole","A Sausage Casserole filled with healthy goodness", 4, 3, DietType.NONE, CuisineType.FRENCH, MealType.DINNER);
         recipeRepository.save(recipe1);
 
-//        Quantity and ingredient for red pepper
+        //Quantity and ingredient for red pepper
         Ingredient redPepper = new Ingredient("Red Peppers");
         ingredientRepository.save(redPepper);
         Quantity redPepperQuantity1 = new Quantity(2, "Whole", redPepper, recipe1);
         quantityRepository.save(redPepperQuantity1);
 
 
-//        Quantity and ingredient for Carrots
-        Ingredient ingredient2 = new Ingredient("Carrots");
-        ingredientRepository.save(ingredient2);
+        //Quantity and ingredient for Carrots
+        Ingredient carrot = new Ingredient("Carrots");
+        ingredientRepository.save(carrot);
+        Quantity carrots = new Quantity(2, "Whole", carrot, recipe1);
+        quantityRepository.save(carrots);
 
-        Ingredient ingredient3 = new Ingredient("Red Onions");
-        ingredientRepository.save(ingredient3);
+        //Quantity and ingredient for Red Onions
+        Ingredient redOnion = new Ingredient("Red Onions");
+        ingredientRepository.save(redOnion);
+        Quantity redOnions = new Quantity(2, "Whole", redOnion, recipe1);
+        quantityRepository.save(redOnions);
 
-        Ingredient ingredient4 = new Ingredient("Garlic Cloves");
-        ingredientRepository.save(ingredient4);
+        //Quality and ingredient for Garlic
+        Ingredient garlicClove = new Ingredient("Garlic Cloves");
+        ingredientRepository.save(garlicClove);
+        Quantity garlicCloves = new Quantity(5, "Whole", garlicClove, recipe1);
+        quantityRepository.save(garlicCloves);
 
-        Ingredient ingredient5 = new Ingredient("Lean Sausages");
-        ingredientRepository.save(ingredient5);
+        //Quantity and ingredient for sausages
+        Ingredient leanSausage = new Ingredient("Lean Sausages");
+        ingredientRepository.save(leanSausage);
+        Quantity leanSausages = new Quantity(8, "Whole", leanSausage, recipe1);
+        quantityRepository.save(leanSausages);
 
+        //Quantity and ingredient for Cherry Tomatoes
+        Ingredient cherryTomato = new Ingredient("Tin peeled Cherry Tomatoes");
+        ingredientRepository.save(cherryTomato);
+        Quantity cherryTomatoes = new Quantity(400, "gr", cherryTomato, recipe1);
+        quantityRepository.save(cherryTomatoes);
 
+        //Quantity and ingredient for Chickpeas
+        Ingredient chickpea = new Ingredient("Tin Chickpeas");
+        ingredientRepository.save(chickpea);
+        Quantity chickpeas = new Quantity(400, "gr", chickpea, recipe1);
+        quantityRepository.save(chickpeas);
+
+        //Quantity and ingredient for Veg Stock
+        Ingredient vegStock = new Ingredient("Vegetable Stock");
+        ingredientRepository.save(vegStock);
+        Quantity vegetableStock = new Quantity(200, "ml", vegStock, recipe1);
+        quantityRepository.save(vegetableStock);
+
+        //Quantity and ingredient for Green Chilli
+        Ingredient greenChilli = new Ingredient("Green Chilli");
+        ingredientRepository.save(greenChilli);
+        Quantity greenChillies = new Quantity(1, "Whole", greenChilli, recipe1);
+        quantityRepository.save(greenChillies);
+
+        //Quantity and ingredient for Paprika
+        Ingredient paprika = new Ingredient("Paprika");
+        ingredientRepository.save(paprika);
+        Quantity paprikas = new Quantity(1, "tsp", paprika, recipe1);
+        quantityRepository.save(paprikas);
+
+        //Quantity and ingredient for French mustard
+        Ingredient frenchMustard = new Ingredient("French Mustard");
+        ingredientRepository.save(frenchMustard);
+        Quantity french_Mustard = new Quantity(2, "tsp", frenchMustard, recipe1);
+        quantityRepository.save(french_Mustard);
+
+        //Quantity and ingredient for mixed veg
+        Ingredient mixedVegetables = new Ingredient("Frozen mixed vegetables");
+        ingredientRepository.save(mixedVegetables);
+        Quantity frozenMixedVeg = new Quantity(100, "gr", mixedVegetables, recipe1);
+        quantityRepository.save(frozenMixedVeg);
+
+/////////////////////////////////////////
         Recipe recipe2 = new Recipe("Harissa-roasted cauliflower steaks", "Made from a few simple ingredients, this vegan cauliflower dish would not look out of place in a smart restaurant. Serve as a starter, or with a salad for lunch or a light meal. Making your own harissa is really easy, but if you’re short of time you can use a jar of ready-made harissa instead.", 2, 4, DietType.VEGAN, CuisineType.PAKISTANI, MealType.LUNCH);
         recipeRepository.save(recipe2);
 
-        Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
-        recipeRepository.save(recipe3);
-        Ingredient ingredient6 = new Ingredient("Tin peeled Cherry Tomatoes");
-        ingredientRepository.save(ingredient6);
-
-        Ingredient ingredient7 = new Ingredient("Tin Chickpeas");
-        ingredientRepository.save(ingredient7);
-
-        Ingredient ingredient8 = new Ingredient("Vegetable Stock");
-        ingredientRepository.save(ingredient8);
-
-        Ingredient ingredient9 = new Ingredient("Green Chilli");
-        ingredientRepository.save(ingredient9);
-
-        Ingredient ingredient10 = new Ingredient("Paprika");
-        ingredientRepository.save(ingredient10);
-
-        Ingredient ingredient11 = new Ingredient("French Mustard");
-        ingredientRepository.save(ingredient11);
-
-        Ingredient ingredient12 = new Ingredient("Frozen mixed vegetables");
-        ingredientRepository.save(ingredient12);
-
 
         //Harissa-roasted cauliflower steaks
-        Ingredient ingredient13 = new Ingredient("Cauliflower");
-        ingredientRepository.save(ingredient13);
+        //Q&I for Cauliflower
+        Ingredient cauliflower = new Ingredient("Cauliflower");
+        ingredientRepository.save(cauliflower);
+        Quantity slicedCauliflower = new Quantity(1, "Whole", cauliflower, recipe2);
+        quantityRepository.save(slicedCauliflower);
 
-        Ingredient ingredient14 = new Ingredient("Garlic Cloves");
-        ingredientRepository.save(ingredient14);
+        //Q&I
+        Quantity glarlicCloves = new Quantity(2, "Whole", garlicClove, recipe2);
+        quantityRepository.save(glarlicCloves);
 
-        Ingredient ingredient15 = new Ingredient("Harissa Paste");
-        ingredientRepository.save(ingredient15);
+        //Q&I
+        Ingredient harissaPaste = new Ingredient("Harissa Paste");
+        ingredientRepository.save(harissaPaste);
+        Quantity harissaSashe = new Quantity(2, "tbsp", harissaPaste, recipe2);
+        quantityRepository.save(harissaSashe);
 
-        Ingredient ingredient16 = new Ingredient("Olive Oil");
-        ingredientRepository.save(ingredient16);
+        //Q&I
+        Ingredient oliveOil = new Ingredient("Olive Oil");
+        ingredientRepository.save(oliveOil);
+        Quantity olive_Oil = new Quantity(2, "tsp", oliveOil, recipe2);
+        quantityRepository.save(olive_Oil);
+        Quantity olive_Oil2 = new Quantity(125, "ml", oliveOil, recipe2);
+        quantityRepository.save(olive_Oil2);
 
+        //Q&I
         Ingredient ingredient17 = new Ingredient("Sea Salt flakes");
         ingredientRepository.save(ingredient17);
 
@@ -116,6 +159,8 @@ public class DataLoader implements ApplicationRunner {
 //        ingredientRepository.save(ingredient24);
 
 
+        Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
+        recipeRepository.save(recipe3);
 
         //Chickpea and Quinoa Salad
         Ingredient ingredient25 = new Ingredient("Quinoa");
