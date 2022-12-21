@@ -51,6 +51,8 @@ public class Recipe {
         this.instructions = new ArrayList<>();
     }
 
+    public Recipe () {}
+
     public Long getId() {
         return id;
     }
