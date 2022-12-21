@@ -31,8 +31,8 @@ public class Ingredient {
 
     public Ingredient(String name, String unit, double value) {
         this.name = name;
-        this.unit = unit;
-        this.value = value;
+//        this.unit = unit;
+//        this.value = value;
         this.quantities = new ArrayList<Quantity>();
     }
 
