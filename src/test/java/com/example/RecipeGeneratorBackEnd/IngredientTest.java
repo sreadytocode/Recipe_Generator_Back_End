@@ -24,7 +24,7 @@ public class IngredientTest {
     public void before() {
         quantity = new Quantity(2.5, "gr", ingredient, recipe);
         recipe = new Recipe("Lentils soup", "Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
-        ingredient = new Ingredient("Paprika","gr", 2.5);
+        ingredient = new Ingredient("Paprika");
 
     }
 
@@ -33,15 +33,6 @@ public class IngredientTest {
         assertEquals("Paprika", ingredient.getName());
     }
 
-    @Test
-    public void ingredientHasUnit(){
-        assertEquals("gr", ingredient.getUnit());
-    }
-
-    @Test
-    public void ingredientHasValue() {
-        assertEquals(2.5, ingredient.getValue(), 0);
-    }
 
 
 }

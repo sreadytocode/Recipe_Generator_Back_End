@@ -18,7 +18,7 @@ public class Recipe {
     @Column(name = "recipeName")
     private String recipeName;
 
-    @Column(name = "recipeDescription")
+    @Column(name = "recipeDescription", columnDefinition = "LONGTEXT")
     private String recipeDescription;
 
     @Column(name = "serving")

@@ -14,8 +14,7 @@ public class DataLoader implements ApplicationRunner {
     IngredientRepository ingredientRepository;
     @Autowired
     InstructionRepository instructionRepository;
-    @Autowired
-    NutrientRepository nutrientRepository;
+
     @Autowired
     QuantityRepository quantityRepository;
     @Autowired
@@ -24,89 +23,93 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader() {}
 
     public void run(ApplicationArguments args) {
+        // Ingredients list for the 3 seed Recipes
 
+        //Healthy Sausage Casserole
         // Recipe is recipeName, recipeDescription, serving, rating, DietType, CuisineType, MealType
         Recipe recipe1 = new Recipe("Healthy Sausage Casserole","A Sausage Casserole filled with healthy goodness", 4, 3, DietType.NONE, CuisineType.FRENCH, MealType.DINNER);
         recipeRepository.save(recipe1);
+
+//        Quantity and ingredient for red pepper
+        Ingredient redPepper = new Ingredient("Red Peppers");
+        ingredientRepository.save(redPepper);
+        Quantity redPepperQuantity1 = new Quantity(2, "Whole", redPepper, recipe1);
+        quantityRepository.save(redPepperQuantity1);
+
+
+//        Quantity and ingredient for Carrots
+        Ingredient ingredient2 = new Ingredient("Carrots");
+        ingredientRepository.save(ingredient2);
+
+        Ingredient ingredient3 = new Ingredient("Red Onions");
+        ingredientRepository.save(ingredient3);
+
+        Ingredient ingredient4 = new Ingredient("Garlic Cloves");
+        ingredientRepository.save(ingredient4);
+
+        Ingredient ingredient5 = new Ingredient("Lean Sausages");
+        ingredientRepository.save(ingredient5);
+
 
         Recipe recipe2 = new Recipe("Harissa-roasted cauliflower steaks", "Made from a few simple ingredients, this vegan cauliflower dish would not look out of place in a smart restaurant. Serve as a starter, or with a salad for lunch or a light meal. Making your own harissa is really easy, but if you’re short of time you can use a jar of ready-made harissa instead.", 2, 4, DietType.VEGAN, CuisineType.PAKISTANI, MealType.LUNCH);
         recipeRepository.save(recipe2);
 
         Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
         recipeRepository.save(recipe3);
-
-
-        // Ingredients list for the 3 seed Recipes
-        //Healthy Sausage Casserole
-        Ingredient ingredient1 = new Ingredient("Red Peppers", "AMOUNT: ", 2);
-        ingredientRepository.save(ingredient1);
-
-        Ingredient ingredient2 = new Ingredient("Carrots", "Cut to thick slices", 2);
-        ingredientRepository.save(ingredient2);
-
-        Ingredient ingredient3 = new Ingredient("Red Onions", "Cut into wedges", 2);
-        ingredientRepository.save(ingredient3);
-
-        Ingredient ingredient4 = new Ingredient("Garlic Cloves", "Finely sliced", 5);
-        ingredientRepository.save(ingredient4);
-
-        Ingredient ingredient5 = new Ingredient("Lean Sausages", "Amount: ", 8);
-        ingredientRepository.save(ingredient5);
-
-        Ingredient ingredient6 = new Ingredient("Tin peeled Cherry Tomatoes", "g", 400);
+        Ingredient ingredient6 = new Ingredient("Tin peeled Cherry Tomatoes");
         ingredientRepository.save(ingredient6);
 
-        Ingredient ingredient7 = new Ingredient("Tin Chickpeas", "g", 400);
+        Ingredient ingredient7 = new Ingredient("Tin Chickpeas");
         ingredientRepository.save(ingredient7);
 
-        Ingredient ingredient8 = new Ingredient("Vegetable Stock", "ml", 200);
+        Ingredient ingredient8 = new Ingredient("Vegetable Stock");
         ingredientRepository.save(ingredient8);
 
-        Ingredient ingredient9 = new Ingredient("Green Chilli", "Chopped with seeds removed", 1);
+        Ingredient ingredient9 = new Ingredient("Green Chilli");
         ingredientRepository.save(ingredient9);
 
-        Ingredient ingredient10 = new Ingredient("Paprika", "Table Spoon", 1);
+        Ingredient ingredient10 = new Ingredient("Paprika");
         ingredientRepository.save(ingredient10);
 
-        Ingredient ingredient11 = new Ingredient("French Mustard", "Table Spoon", 2);
+        Ingredient ingredient11 = new Ingredient("French Mustard");
         ingredientRepository.save(ingredient11);
 
-        Ingredient ingredient12 = new Ingredient("Frozen mixed vegetables", "g", 100);
+        Ingredient ingredient12 = new Ingredient("Frozen mixed vegetables");
         ingredientRepository.save(ingredient12);
 
 
         //Harissa-roasted cauliflower steaks
-        Ingredient ingredient13 = new Ingredient("Cauliflower", "Sliced into Steaks", 1);
+        Ingredient ingredient13 = new Ingredient("Cauliflower");
         ingredientRepository.save(ingredient13);
 
-        Ingredient ingredient14 = new Ingredient("Garlic Cloves", "Peeled", 2);
+        Ingredient ingredient14 = new Ingredient("Garlic Cloves");
         ingredientRepository.save(ingredient14);
 
-        Ingredient ingredient15 = new Ingredient("Harissa Paste", "Table Spoon", 2);
+        Ingredient ingredient15 = new Ingredient("Harissa Paste");
         ingredientRepository.save(ingredient15);
 
-        Ingredient ingredient16 = new Ingredient("Olive Oil", "Table Spoon", 2);
+        Ingredient ingredient16 = new Ingredient("Olive Oil");
         ingredientRepository.save(ingredient16);
 
-        Ingredient ingredient17 = new Ingredient("Sea Salt flakes", "To taste", 0);
+        Ingredient ingredient17 = new Ingredient("Sea Salt flakes");
         ingredientRepository.save(ingredient17);
 
-        Ingredient ingredient18 = new Ingredient("Chilli Flakes", "Table Spoon", 1);
+        Ingredient ingredient18 = new Ingredient("Chilli Flakes");
         ingredientRepository.save(ingredient18);
 
-        Ingredient ingredient19 = new Ingredient("Cumin", "Table Spoon", 2);
+        Ingredient ingredient19 = new Ingredient("Cumin");
         ingredientRepository.save(ingredient19);
 
-        Ingredient ingredient20 = new Ingredient("Coriander Seeds", "Table Spoon", 0.5);
+        Ingredient ingredient20 = new Ingredient("Coriander Seeds");
         ingredientRepository.save(ingredient20);
 
-        Ingredient ingredient21 = new Ingredient("Hot smoked Paprika", "Tables Spoon", 2);
+        Ingredient ingredient21 = new Ingredient("Hot smoked Paprika");
         ingredientRepository.save(ingredient21);
 
-        Ingredient ingredient22 = new Ingredient("Garlic Cloves", "Peeled", 4);
+        Ingredient ingredient22 = new Ingredient("Garlic Cloves");
         ingredientRepository.save(ingredient22);
 
-        Ingredient ingredient23 = new Ingredient("Large Char-grilled Pepper", "from a jar", 1);
+        Ingredient ingredient23 = new Ingredient("Large Char-grilled Pepper");
         ingredientRepository.save(ingredient23);
 
 //        Ingredient ingredient24 = new Ingredient("", "", 0, recipe2);
@@ -115,46 +118,46 @@ public class DataLoader implements ApplicationRunner {
 
 
         //Chickpea and Quinoa Salad
-        Ingredient ingredient25 = new Ingredient("Quinoa","gr", 180);
+        Ingredient ingredient25 = new Ingredient("Quinoa");
         ingredientRepository.save(ingredient25);
 
-        Ingredient ingredient26 = new Ingredient("Stock (chicken, beef or vegetable)","ml", 480);
+        Ingredient ingredient26 = new Ingredient("Stock (chicken, beef or vegetable)");
         ingredientRepository.save(ingredient26);
 
-        Ingredient ingredient27 = new Ingredient("Chickpeas","gr", 440);
+        Ingredient ingredient27 = new Ingredient("Chickpeas");
         ingredientRepository.save(ingredient27);
 
-        Ingredient ingredient28 = new Ingredient("Avocado","unit", 1);
+        Ingredient ingredient28 = new Ingredient("Avocado");
         ingredientRepository.save(ingredient28);
 
-        Ingredient ingredient29 = new Ingredient("Carrots","units", 4);
+        Ingredient ingredient29 = new Ingredient("Carrots");
         ingredientRepository.save(ingredient29);
 
-        Ingredient ingredient30 = new Ingredient("Cherry Tomatoes","units", 10);
+        Ingredient ingredient30 = new Ingredient("Cherry Tomatoes");
         ingredientRepository.save(ingredient30);
 
-        Ingredient ingredient31 = new Ingredient("Smoked Paprika","tsp", 3);
+        Ingredient ingredient31 = new Ingredient("Smoked Paprika");
         ingredientRepository.save(ingredient31);
 
-        Ingredient ingredient32 = new Ingredient("Sea Salt","pinch", 1);
+        Ingredient ingredient32 = new Ingredient("Sea Salt");
         ingredientRepository.save(ingredient32);
 
-        Ingredient ingredient33 = new Ingredient("Cucumber","half", 1);
+        Ingredient ingredient33 = new Ingredient("Cucumber");
         ingredientRepository.save(ingredient33);
 
-        Ingredient ingredient34 = new Ingredient(" olive oil","tbsp", 2);
+        Ingredient ingredient34 = new Ingredient(" olive oil");
         ingredientRepository.save(ingredient34);
 
-        Ingredient ingredient35 = new Ingredient(" Black pepper","dash", 1);
+        Ingredient ingredient35 = new Ingredient(" Black pepper");
         ingredientRepository.save(ingredient35);
 
-        Ingredient ingredient36 = new Ingredient(" Dried oregano","tsp", 1);
+        Ingredient ingredient36 = new Ingredient(" Dried oregano");
         ingredientRepository.save(ingredient36);
 
-        Ingredient ingredient37 = new Ingredient(" Chilli flakes","tsp", 1);
+        Ingredient ingredient37 = new Ingredient(" Chilli flakes");
         ingredientRepository.save(ingredient37);
 
-        Ingredient ingredient38 = new Ingredient(" Nando's hot sauce","dash", 1);
+        Ingredient ingredient38 = new Ingredient(" Nando's hot sauce");
         ingredientRepository.save(ingredient38);
 
 
