@@ -129,8 +129,8 @@ public class DataLoader implements ApplicationRunner {
         quantityRepository.save(slicedCauliflower);
 
         //Q&I
-        Quantity glarlicCloves = new Quantity(2, "Whole", garlicClove, recipe2);
-        quantityRepository.save(glarlicCloves);
+        Quantity garlicCloves3 = new Quantity(2, "Whole", garlicClove, recipe2);
+        quantityRepository.save(garlicCloves3);
 
         //Q&I
         Ingredient harissaPaste = new Ingredient("Harissa Paste");
