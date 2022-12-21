@@ -30,12 +30,12 @@ public class DataLoader implements ApplicationRunner {
         Recipe recipe1 = new Recipe("Healthy Sausage Casserole","A Sausage Casserole filled with healthy goodness", 4, 3, DietType.NONE, CuisineType.FRENCH, MealType.DINNER);
         recipeRepository.save(recipe1);
 
+
         //Quantity and ingredient for red pepper
         Ingredient redPepper = new Ingredient("Red Peppers");
         ingredientRepository.save(redPepper);
         Quantity redPepperQuantity1 = new Quantity(2, "Whole", redPepper, recipe1);
         quantityRepository.save(redPepperQuantity1);
-
 
         //Quantity and ingredient for Carrots
         Ingredient carrot = new Ingredient("Carrots");
@@ -103,12 +103,25 @@ public class DataLoader implements ApplicationRunner {
         Quantity frozenMixedVeg = new Quantity(100, "gr", mixedVegetables, recipe1);
         quantityRepository.save(frozenMixedVeg);
 
+        // Instructions
+        Instruction instruction1 = new Instruction(1, "Preheat the oven to 220C/200C Fan/Gas 7.", recipe1);
+        instructionRepository.save(instruction1);
+
+        Instruction instruction2 = new Instruction(2, "Put the peppers, carrots, onions and garlic into a deep baking dish and roast for 20 minutes. Add the sausages and roast for a further 10 minutes.", recipe1);
+        instructionRepository.save(instruction2);
+
+        Instruction instruction3 = new Instruction(3, "Turn the oven down to 200C/180C Fan/Gas 6. Pour the tomatoes and chickpeas into the baking dish, then stir in the stock, chilli and paprika. Bake for another 35 minutes.", recipe1);
+        instructionRepository.save(instruction3);
+
+        Instruction instruction4 = new Instruction(4, "Stir in the mustard and the frozen mixed veg and return to the oven for 5 minutes. Leave to rest for 10 minutes before serving.", recipe1);
+        instructionRepository.save(instruction4);
+
 /////////////////////////////////////////
+        //Harissa-roasted cauliflower steaks recipe
         Recipe recipe2 = new Recipe("Harissa-roasted cauliflower steaks", "Made from a few simple ingredients, this vegan cauliflower dish would not look out of place in a smart restaurant. Serve as a starter, or with a salad for lunch or a light meal. Making your own harissa is really easy, but if you’re short of time you can use a jar of ready-made harissa instead.", 2, 4, DietType.VEGAN, CuisineType.PAKISTANI, MealType.LUNCH);
         recipeRepository.save(recipe2);
 
 
-        //Harissa-roasted cauliflower steaks
         //Q&I for Cauliflower
         Ingredient cauliflower = new Ingredient("Cauliflower");
         ingredientRepository.save(cauliflower);
@@ -134,94 +147,46 @@ public class DataLoader implements ApplicationRunner {
         quantityRepository.save(olive_Oil2);
 
         //Q&I
-        Ingredient ingredient17 = new Ingredient("Sea Salt flakes");
-        ingredientRepository.save(ingredient17);
+        Ingredient chilliFlake = new Ingredient("Chilli Flakes");
+        ingredientRepository.save(chilliFlake);
+        Quantity chilliFlakes = new Quantity(1, "tsp", chilliFlake, recipe2);
+        quantityRepository.save(chilliFlakes);
 
-        Ingredient ingredient18 = new Ingredient("Chilli Flakes");
-        ingredientRepository.save(ingredient18);
+        //Q&I
+        Ingredient seaSaltFlake = new Ingredient("Sea Salt flakes");
+        ingredientRepository.save(seaSaltFlake);
+        Quantity seaSaltFlakes = new Quantity(0, "To taste", seaSaltFlake, recipe2);
+        quantityRepository.save(seaSaltFlakes);
 
-        Ingredient ingredient19 = new Ingredient("Cumin");
-        ingredientRepository.save(ingredient19);
+        //Q&I
+        Ingredient cumin = new Ingredient("Cumin");
+        ingredientRepository.save(cumin);
+        Quantity groundCumin = new Quantity(2, "tsp", cumin, recipe2);
+        quantityRepository.save(groundCumin);
 
-        Ingredient ingredient20 = new Ingredient("Coriander Seeds");
-        ingredientRepository.save(ingredient20);
+        //Q&I
+        Ingredient corianderSeed = new Ingredient("Coriander Seeds");
+        ingredientRepository.save(corianderSeed);
+        Quantity corianderSeeds = new Quantity(0.5, "tsp", corianderSeed, recipe2);
+        quantityRepository.save(corianderSeeds);
 
-        Ingredient ingredient21 = new Ingredient("Hot smoked Paprika");
-        ingredientRepository.save(ingredient21);
+        //Q&I
+        Ingredient smokedPaprika = new Ingredient("Hot smoked Paprika");
+        ingredientRepository.save(smokedPaprika);
+        Quantity smokedPaprikas =  new Quantity(2, "tsp", smokedPaprika, recipe2);
+        quantityRepository.save(smokedPaprikas);
 
-        Ingredient ingredient22 = new Ingredient("Garlic Cloves");
-        ingredientRepository.save(ingredient22);
+        //Q&I
+        Quantity garlicCloves2 = new Quantity(4, "Peeled Whole", garlicClove, recipe2);
+        quantityRepository.save(garlicCloves2);
 
-        Ingredient ingredient23 = new Ingredient("Large Char-grilled Pepper");
-        ingredientRepository.save(ingredient23);
-
-//        Ingredient ingredient24 = new Ingredient("", "", 0, recipe2);
-//        ingredientRepository.save(ingredient24);
-
-
-        Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
-        recipeRepository.save(recipe3);
-
-        //Chickpea and Quinoa Salad
-        Ingredient ingredient25 = new Ingredient("Quinoa");
-        ingredientRepository.save(ingredient25);
-
-        Ingredient ingredient26 = new Ingredient("Stock (chicken, beef or vegetable)");
-        ingredientRepository.save(ingredient26);
-
-        Ingredient ingredient27 = new Ingredient("Chickpeas");
-        ingredientRepository.save(ingredient27);
-
-        Ingredient ingredient28 = new Ingredient("Avocado");
-        ingredientRepository.save(ingredient28);
-
-        Ingredient ingredient29 = new Ingredient("Carrots");
-        ingredientRepository.save(ingredient29);
-
-        Ingredient ingredient30 = new Ingredient("Cherry Tomatoes");
-        ingredientRepository.save(ingredient30);
-
-        Ingredient ingredient31 = new Ingredient("Smoked Paprika");
-        ingredientRepository.save(ingredient31);
-
-        Ingredient ingredient32 = new Ingredient("Sea Salt");
-        ingredientRepository.save(ingredient32);
-
-        Ingredient ingredient33 = new Ingredient("Cucumber");
-        ingredientRepository.save(ingredient33);
-
-        Ingredient ingredient34 = new Ingredient(" olive oil");
-        ingredientRepository.save(ingredient34);
-
-        Ingredient ingredient35 = new Ingredient(" Black pepper");
-        ingredientRepository.save(ingredient35);
-
-        Ingredient ingredient36 = new Ingredient(" Dried oregano");
-        ingredientRepository.save(ingredient36);
-
-        Ingredient ingredient37 = new Ingredient(" Chilli flakes");
-        ingredientRepository.save(ingredient37);
-
-        Ingredient ingredient38 = new Ingredient(" Nando's hot sauce");
-        ingredientRepository.save(ingredient38);
-
-
+        //Q&I
+        Ingredient chargrilledPepper = new Ingredient("Large Char-grilled Pepper");
+        ingredientRepository.save(chargrilledPepper);
+        Quantity chargrilledPeppers = new Quantity(1, "Large", chargrilledPepper, recipe2);
+        quantityRepository.save(chargrilledPeppers);
 
         //Instructions
-        //Healthy Sausage Casserole
-        Instruction instruction1 = new Instruction(1, "Preheat the oven to 220C/200C Fan/Gas 7.", recipe1);
-        instructionRepository.save(instruction1);
-
-        Instruction instruction2 = new Instruction(2, "Put the peppers, carrots, onions and garlic into a deep baking dish and roast for 20 minutes. Add the sausages and roast for a further 10 minutes.", recipe1);
-        instructionRepository.save(instruction2);
-
-        Instruction instruction3 = new Instruction(3, "Turn the oven down to 200C/180C Fan/Gas 6. Pour the tomatoes and chickpeas into the baking dish, then stir in the stock, chilli and paprika. Bake for another 35 minutes.", recipe1);
-        instructionRepository.save(instruction3);
-
-        Instruction instruction4 = new Instruction(4, "Stir in the mustard and the frozen mixed veg and return to the oven for 5 minutes. Leave to rest for 10 minutes before serving.", recipe1);
-        instructionRepository.save(instruction4);
-
-        //Harissa-roasted cauliflower steaks
         Instruction instruction5 = new Instruction(1, "To make the harissa, place all the ingredients into a food processor with a pinch of salt and blend, or use a pestle and mortar to grind until smooth.", recipe2);
         instructionRepository.save(instruction5);
 
@@ -237,7 +202,91 @@ public class DataLoader implements ApplicationRunner {
         Instruction instruction9 = new Instruction(5, "To serve, divide the hummus between two plates and top with the cauliflower steaks. Add the crispy leaves around the plate and finish with a sprinkling of toasted pine nuts and a drizzle of harissa.", recipe2);
         instructionRepository.save(instruction9);
 
-        //Chickpea and Quinoa Salad
+/////////////////////////////////////////
+        //Chickpea and Quinoa Salad recipe
+        Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
+        recipeRepository.save(recipe3);
+
+        //Q&I
+        Ingredient quinoa = new Ingredient("Quinoa");
+        ingredientRepository.save(quinoa);
+        Quantity quinoas = new Quantity(180, "gr", quinoa, recipe3);
+        quantityRepository.save(quinoas);
+
+        //Q&I
+        Ingredient stock = new Ingredient("Stock (chicken, beef or vegetable)");
+        ingredientRepository.save(stock);
+        Quantity stocks = new Quantity(480, "ml", stock, recipe3);
+        quantityRepository.save(stocks);
+
+        //Q&I
+        Quantity chickpeas2 = new Quantity(440, "gr", chickpea, recipe3);
+        quantityRepository.save(chickpeas2);
+
+        //Q&I
+        Ingredient avocado = new Ingredient("Avocado");
+        ingredientRepository.save(avocado);
+        Quantity avocados = new Quantity(1, "Whole", avocado, recipe3);
+        quantityRepository.save(avocados);
+
+        //Q&I
+        Quantity carrots2 = new Quantity(5, "Whole", carrot, recipe3);
+        quantityRepository.save(carrots2);
+
+        //Q&I
+        Ingredient freshCherryTomatoes = new Ingredient("Cherry Tomatoes");
+        ingredientRepository.save(freshCherryTomatoes);
+        Quantity cherryTomotoes2 = new Quantity(0, "As many as you want", freshCherryTomatoes, recipe3);
+        quantityRepository.save(cherryTomotoes2);
+
+        //Q&I
+        Quantity smokedPaprika2 = new Quantity(3, "tsp", smokedPaprika, recipe3);
+        quantityRepository.save(smokedPaprika2);
+
+        //Q&I
+        Ingredient seaSalt = new Ingredient("Sea Salt");
+        ingredientRepository.save(seaSalt);
+        Quantity pinch = new Quantity(0, "Pinch of Sea Salt", seaSalt, recipe3);
+        quantityRepository.save(pinch);
+
+        //Q&I
+        Ingredient cucumber = new Ingredient("Cucumber");
+        ingredientRepository.save(cucumber);
+        Quantity cucumbers = new Quantity(0.5, "Half a cucumber", cucumber, recipe3);
+        quantityRepository.save(cucumbers);
+
+        Quantity oliveOils2 = new Quantity(2, "tbsp", oliveOil, recipe3);
+        quantityRepository.save(oliveOils2);
+
+        //Q&I
+        Ingredient blackPepper = new Ingredient(" Black pepper");
+        ingredientRepository.save(blackPepper);
+        Quantity blackPeppers = new Quantity(0, "Dash", blackPepper, recipe3);
+        quantityRepository.save(blackPeppers);
+
+        //Q&I
+        Ingredient oregano = new Ingredient(" Dried oregano");
+        ingredientRepository.save(oregano);
+        Quantity driedOregano = new Quantity(1, "tsp", oregano, recipe3);
+        quantityRepository.save(driedOregano);
+
+        //Q&I
+        Quantity chilliFlakes2 = new Quantity(1, "tsp", chilliFlake, recipe3);
+        quantityRepository.save(chilliFlakes2);
+
+        //Q&I
+        Ingredient nandosHotSauce = new Ingredient("Nando's hot sauce");
+        ingredientRepository.save(nandosHotSauce);
+        Quantity piriHotSauce = new Quantity(0, "(Optional) As much as you want", nandosHotSauce, recipe3);
+        quantityRepository.save(piriHotSauce);
+
+        Ingredient lemonJuice = new Ingredient("Lemon juice");
+        ingredientRepository.save(lemonJuice);
+        Quantity lemonJuices = new Quantity(1, "tsp", lemonJuice, recipe3);
+        quantityRepository.save(lemonJuices);
+
+        //Instructions
+        // DON'T DELETE \n it looks weird I know but you need for it to go onto the next line
         Instruction instruction10 = new Instruction(1, "Add quinoa to a sieve, wash under cold water for around 30 seconds or until\n" +
                 "water is clear. Add quinoa to sauce pan with stock, smoked paprika, chilli flakes, pinch of \n" +
                 "sea salt. Heat to high heat, when it comes to a boil place a lid, lower to low \n" +
@@ -255,8 +304,8 @@ public class DataLoader implements ApplicationRunner {
         Instruction instruction13 = new Instruction(4, "Add cooled quinoa to bowl. Mix together and enjoy!", recipe3);
         instructionRepository.save(instruction13);
 
-
-        //Quantity
+/////////////////////////////////////////
+        //End of file or add new recipe below
 
     }
 
