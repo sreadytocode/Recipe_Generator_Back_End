@@ -19,7 +19,7 @@ public class Ingredient {
     private String name;
 
     @JsonIgnoreProperties({"ingredients"})
-    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Quantity> quantities;
 
 

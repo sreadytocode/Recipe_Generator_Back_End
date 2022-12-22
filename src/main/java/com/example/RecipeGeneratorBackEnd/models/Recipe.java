@@ -35,10 +35,11 @@ public class Recipe {
     MealType mealType;
 
     @JsonIgnoreProperties({"recipe"})
-    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Quantity> quantities;
 
-    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"recipe"})
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Instruction> instructions;
 
 
