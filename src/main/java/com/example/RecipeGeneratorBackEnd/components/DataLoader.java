@@ -27,7 +27,7 @@ public class DataLoader implements ApplicationRunner {
 
         //Healthy Sausage Casserole
         // Recipe is recipeName, recipeDescription, serving, rating, DietType, CuisineType, MealType
-        Recipe recipe1 = new Recipe("Healthy Sausage Casserole","A Sausage Casserole filled with healthy goodness", 4, 3, DietType.NONE, CuisineType.FRENCH, MealType.DINNER);
+        Recipe recipe1 = new Recipe("Healthy Sausage Casserole","https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/healthy_sausage_16132_16x9.jpg","A Sausage Casserole filled with healthy goodness", 4, 3, DietType.NONE, CuisineType.FRENCH, MealType.DINNER);
         recipeRepository.save(recipe1);
 
 
@@ -118,7 +118,7 @@ public class DataLoader implements ApplicationRunner {
 
 /////////////////////////////////////////
         //Harissa-roasted cauliflower steaks recipe
-        Recipe recipe2 = new Recipe("Harissa-roasted cauliflower steaks", "Made from a few simple ingredients, this vegan cauliflower dish would not look out of place in a smart restaurant. Serve as a starter, or with a salad for lunch or a light meal. Making your own harissa is really easy, but if you’re short of time you can use a jar of ready-made harissa instead.", 2, 4, DietType.VEGAN, CuisineType.PAKISTANI, MealType.LUNCH);
+        Recipe recipe2 = new Recipe("Harissa-roasted cauliflower steaks", "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/harissa-roasted_35227_16x9.jpg","Made from a few simple ingredients, this vegan cauliflower dish would not look out of place in a smart restaurant. Serve as a starter, or with a salad for lunch or a light meal. Making your own harissa is really easy, but if you’re short of time you can use a jar of ready-made harissa instead.", 2, 4, DietType.VEGAN, CuisineType.PAKISTANI, MealType.LUNCH);
         recipeRepository.save(recipe2);
 
 
@@ -204,7 +204,7 @@ public class DataLoader implements ApplicationRunner {
 
 /////////////////////////////////////////
         //Chickpea and Quinoa Salad recipe
-        Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
+        Recipe recipe3 =new Recipe("Chickpea and Quinoa Salad", "https://foodrevolution.org/wp-content/uploads/Chickpea-Quinoa-Salad-2.jpg","A super easy and healthy mediterranean dish packed fill of nutrition and goodness.", 4, 4, DietType.VEGETARIAN, CuisineType.FRENCH, MealType.LUNCH);
         recipeRepository.save(recipe3);
 
         //Q&I

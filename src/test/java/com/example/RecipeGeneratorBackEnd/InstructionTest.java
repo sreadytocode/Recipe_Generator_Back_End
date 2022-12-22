@@ -14,7 +14,7 @@ public class InstructionTest {
 
     @Before
     public void before(){
-        recipe = new Recipe("Lentils soup", "Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
+        recipe = new Recipe("Lentils soup", "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/lentil_soup-c6fa61c.jpg?quality=90&webp=true&resize=440,400","Yummy lentils soup", 2, 5.0, DietType.VEGETARIAN, CuisineType.SPANISH, MealType.DINNER);
         instruction = new Instruction(1, "Pre-heat the oven.200c.", recipe);
     }
 
