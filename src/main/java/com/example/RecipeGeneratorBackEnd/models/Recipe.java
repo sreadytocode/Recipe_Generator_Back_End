@@ -2,7 +2,6 @@ package com.example.RecipeGeneratorBackEnd.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +14,16 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "recipeName")
-    private String recipeName;
+    @Column
+    private String name;
 
-    @Column(name = "recipeDescription", columnDefinition = "LONGTEXT")
-    private String recipeDescription;
+    @Column(columnDefinition = "LONGTEXT")
+    private String description;
 
-    @Column(name = "serving")
+    @Column
     private int serving;
 
-    @Column(name = "rating")
+    @Column
     private double rating;
 
     DietType dietType;
@@ -39,10 +38,10 @@ public class Recipe {
     private List<Instruction> instructions;
 
 
-    public Recipe(String recipeName, String recipeDescription, int serving, double rating,
+    public Recipe(String name, String description, int serving, double rating,
                   DietType dietType, CuisineType cuisineType, MealType mealType) {
-        this.recipeName = recipeName;
-        this.recipeDescription = recipeDescription;
+        this.name = name;
+        this.description = description;
         this.serving = serving;
         this.rating = rating;
         this.dietType = dietType;
@@ -62,20 +61,20 @@ public class Recipe {
         this.id = id;
     }
 
-    public String getRecipeName() {
-        return recipeName;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRecipeDescription() {
-        return recipeDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setRecipeDescription(String recipeDescription) {
-        this.recipeDescription = recipeDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getServing() {

@@ -13,6 +13,6 @@ public interface QuantityRepository extends JpaRepository<Quantity, Long> {
 
 //    List<Quantity> findByIngredientNameIgnoreCase(String ingredientName);
 
-    List<Quantity> findByRecipeRecipeNameIgnoreCaseAndIngredientNameIgnoreCase(String recipeName, String ingredientName);
+    List<Quantity> findByRecipeNameIgnoreCaseAndIngredientNameIgnoreCase(String recipeName, String ingredientName);
 
 }
