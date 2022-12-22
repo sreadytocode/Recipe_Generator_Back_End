@@ -22,15 +22,41 @@ public class RecipesController {
         return new ResponseEntity<>(recipeRepository.findAll(), HttpStatus.OK);
     }
 
+    //SHOW
     @GetMapping(value = "/recipes/{id}" )
     public ResponseEntity getRecipe(@PathVariable Long id) {
         return new ResponseEntity<>(recipeRepository.findById(id), HttpStatus.OK);
     }
 
+    //CREATE
     @PostMapping(value = "/recipes")
     public ResponseEntity<Recipe> postRecipe(@RequestBody Recipe recipe) {
         recipeRepository.save(recipe);
         return new ResponseEntity<>(recipe, HttpStatus.CREATED);
+    }
+
+    //UPDATE
+    @PutMapping(value = "/recipes/{id}")
+    public ResponseEntity<Recipe> putRecipe(@RequestBody Recipe recipe, @PathVariable Long id) {
+     Recipe recipeToUpdate = recipeRepository.findById(id).get();
+     recipeToUpdate.setName(recipe.getName());
+     recipeToUpdate.setImage(recipe.getImage());
+     recipeToUpdate.setDescription(recipe.getDescription());
+     recipeToUpdate.setServing(recipe.getServing());
+     recipeToUpdate.setRating(recipe.getRating());
+     recipeToUpdate.setDietType(recipe.getDietType());
+     recipeToUpdate.setCuisineType(recipe.getCuisineType());
+     recipeToUpdate.setMealType(recipe.getMealType());
+     recipeToUpdate.setQuantities(recipe.getQuantities());
+     recipeToUpdate.setInstructions(recipe.getInstructions());
+     return new ResponseEntity<>(recipeToUpdate, HttpStatus.OK);
+    }
+
+    //DELETE
+    @DeleteMapping(value = "/recipes/{id}")
+    public ResponseEntity<Long> deleteRecipe(@PathVariable Long id) {
+        recipeRepository.deleteById(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
 }
