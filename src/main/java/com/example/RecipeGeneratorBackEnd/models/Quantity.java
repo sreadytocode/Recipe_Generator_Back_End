@@ -3,6 +3,8 @@ package com.example.RecipeGeneratorBackEnd.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+
 @Entity
 @Table(name = "quantities")
 public class Quantity {
@@ -17,15 +19,16 @@ public class Quantity {
     @Column(name = "unit")
     private String unit;
 
-    @ManyToOne
     @JsonIgnoreProperties({"quantities"})
+    @ManyToOne
     @JoinColumn(name = "ingredient_id", nullable = false)
     private Ingredient ingredient;
 
-    @ManyToOne
     @JsonIgnoreProperties({"quantities"})
+    @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
+
 
     public Quantity(double amount, String unit, Ingredient ingredient, Recipe recipe) {
         this.amount = amount;

@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface QuantityRepository extends JpaRepository<Quantity, Long> {
 
-    List<Quantity> findByIngredientName(String ingredientName);
+//    List<Quantity> findByIngredientNameIgnoreCase(String ingredientName);
+
+    List<Quantity> findByRecipeRecipeNameIgnoreCaseAndIngredientNameIgnoreCase(String recipeName, String ingredientName);
 
 }
