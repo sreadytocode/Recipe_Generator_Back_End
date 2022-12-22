@@ -19,13 +19,27 @@ public class QuantitiesController {
     QuantityRepository quantityRepository;
 
     @GetMapping(value = "/quantities")
-    public ResponseEntity<List<Quantity>> getAllQuantities(@RequestParam(name = "ingredientName", required=false) String ingredientName) {
-        if (ingredientName != null) {
-            List<Quantity> quantities = quantityRepository.findByIngredientName(ingredientName);
+    public ResponseEntity<List<Quantity>> getAllQuantities(@RequestParam(name = "recipeName", required = false) String recipeName,
+                                                           @RequestParam(name = "ingredientName", required=false) String ingredientName) {
+//        if (ingredientName != null) {
+//            List<Quantity> quantities = quantityRepository.findByIngredientNameIgnoreCase(ingredientName);
+//            return new ResponseEntity<>(quantities, HttpStatus.OK);
+//        }
+        if (ingredientName != null && recipeName != null) {
+            List<Quantity> quantities = quantityRepository.findByRecipeRecipeNameIgnoreCaseAndIngredientNameIgnoreCase(recipeName, ingredientName);
             return new ResponseEntity<>(quantities, HttpStatus.OK);
         }
         return new ResponseEntity<>(quantityRepository.findAll(), HttpStatus.OK);
     }
+
+//    @GetMapping(value = "/quantities")
+//    public ResponseEntity<List<Quantity>> getAllQuantities(@RequestParam(name = "ingredientName", required=false) String ingredientName) {
+//        if (ingredientName != null) {
+//            List<Quantity> quantities = quantityRepository.findByIngredientNameIgnoreCase(ingredientName);
+//            return new ResponseEntity<>(quantities, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(quantityRepository.findAll(), HttpStatus.OK);
+//    }
 
     @GetMapping(value = "/quantities/{id}")
     public ResponseEntity getQuantities(@PathVariable Long id) {

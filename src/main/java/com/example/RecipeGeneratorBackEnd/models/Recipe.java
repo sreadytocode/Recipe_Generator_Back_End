@@ -38,7 +38,6 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Instruction> instructions;
 
-    public Recipe() {}
 
     public Recipe(String recipeName, String recipeDescription, int serving, double rating,
                   DietType dietType, CuisineType cuisineType, MealType mealType) {
