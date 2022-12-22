@@ -1,7 +1,6 @@
 package com.example.RecipeGeneratorBackEnd;
 
 import com.example.RecipeGeneratorBackEnd.models.*;
-import jakarta.persistence.Table;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,12 +22,12 @@ public class RecipeTest {
 
     @Test
     public void hasName(){
-        assertEquals("Lentils soup", recipe.getRecipeName());
+        assertEquals("Lentils soup", recipe.getName());
     }
 
     @Test
     public void hasDescription(){
-        assertEquals("Yummy lentils soup", recipe.getRecipeDescription());
+        assertEquals("Yummy lentils soup", recipe.getDescription());
     }
 
     @Test

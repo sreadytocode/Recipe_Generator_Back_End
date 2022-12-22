@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class RecipesController {
 
     @Autowired
@@ -38,9 +39,9 @@ public class RecipesController {
     @PutMapping(value = "/recipes/{id}")
     public ResponseEntity<Recipe> putRecipe(@RequestBody Recipe recipe, @PathVariable Long id) {
      Recipe recipeToUpdate = recipeRepository.findById(id).get();
-     recipeToUpdate.setRecipeName(recipe.getRecipeName());
+     recipeToUpdate.setName(recipe.getName());
      recipeToUpdate.setImage(recipe.getImage());
-     recipeToUpdate.setRecipeDescription(recipe.getRecipeDescription());
+     recipeToUpdate.setDescription(recipe.getDescription());
      recipeToUpdate.setServing(recipe.getServing());
      recipeToUpdate.setRating(recipe.getRating());
      recipeToUpdate.setDietType(recipe.getDietType());

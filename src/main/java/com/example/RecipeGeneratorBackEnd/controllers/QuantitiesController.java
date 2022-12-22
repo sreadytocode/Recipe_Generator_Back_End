@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class QuantitiesController {
 
     @Autowired
@@ -24,7 +25,7 @@ public class QuantitiesController {
 //            return new ResponseEntity<>(quantities, HttpStatus.OK);
 //        }
         if (ingredientName != null && recipeName != null) {
-            List<Quantity> quantities = quantityRepository.findByRecipeRecipeNameIgnoreCaseAndIngredientNameIgnoreCase(recipeName, ingredientName);
+            List<Quantity> quantities = quantityRepository.findByRecipeNameIgnoreCaseAndIngredientNameIgnoreCase(recipeName, ingredientName);
             return new ResponseEntity<>(quantities, HttpStatus.OK);
         }
         return new ResponseEntity<>(quantityRepository.findAll(), HttpStatus.OK);
