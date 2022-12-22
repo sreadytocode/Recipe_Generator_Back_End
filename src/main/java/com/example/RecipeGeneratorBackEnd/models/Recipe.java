@@ -41,7 +41,6 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Instruction> instructions;
 
-    public Recipe() {}
 
     public Recipe(String recipeName, String image,String recipeDescription, int serving, double rating,
                   DietType dietType, CuisineType cuisineType, MealType mealType) {
@@ -56,6 +55,8 @@ public class Recipe {
         this.quantities = new ArrayList<>();
         this.instructions = new ArrayList<>();
     }
+
+    public Recipe () {}
 
     public Long getId() {
         return id;
