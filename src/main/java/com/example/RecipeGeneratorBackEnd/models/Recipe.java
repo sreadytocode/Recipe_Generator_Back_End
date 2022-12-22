@@ -17,8 +17,12 @@ public class Recipe {
     @Column
     private String name;
 
+
     @Column(columnDefinition = "LONGTEXT")
     private String description;
+
+    @Column(name = "image")
+    private String image;
 
     @Column
     private int serving;
@@ -38,10 +42,13 @@ public class Recipe {
     private List<Instruction> instructions;
 
 
-    public Recipe(String name, String description, int serving, double rating,
+
+    public Recipe(String name, String image, String description, int serving, double rating,
                   DietType dietType, CuisineType cuisineType, MealType mealType) {
         this.name = name;
+        this.image = image;
         this.description = description;
+
         this.serving = serving;
         this.rating = rating;
         this.dietType = dietType;
@@ -55,6 +62,14 @@ public class Recipe {
 
     public Long getId() {
         return id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setId(Long id) {
