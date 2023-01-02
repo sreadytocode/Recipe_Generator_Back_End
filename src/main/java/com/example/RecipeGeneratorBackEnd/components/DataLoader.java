@@ -306,6 +306,70 @@ public class DataLoader implements ApplicationRunner {
 
 /////////////////////////////////////////
         //End of file or add new recipe below
+       //Japanese fried chicken recipe
+        Recipe recipe4 =new Recipe("Japanese fried chicken", "https://i8b2m3d9.stackpathcdn.com/wp-content/uploads/2022/02/Karaage_Chicken_7349.jpg","With hint of garlic and soy sauce, Japanese fried chicken (kara-age) is one of the most popular dishes in Japan.", 4, 4, DietType.NONE, CuisineType.JAPANESE, MealType.DINNER);
+        recipeRepository.save(recipe4);
+
+        //Q&I
+        Ingredient chicken = new Ingredient("Chicken");
+        ingredientRepository.save(chicken);
+        Quantity chickens = new Quantity(450, "gr", chicken, recipe4);
+        quantityRepository.save(chickens);
+
+        //Q&I
+        Ingredient mirin = new Ingredient("Mirin");
+        ingredientRepository.save(mirin);
+        Quantity mirins = new Quantity(15, "ml", mirin, recipe4);
+        quantityRepository.save(mirins);
+
+
+        //Q&I
+        Ingredient soysauce = new Ingredient("Soy Sauce");
+        ingredientRepository.save(soysauce);
+        Quantity soysauces = new Quantity(30, "ml", soysauce, recipe4);
+        quantityRepository.save(soysauces);
+
+
+        //Q&I
+        Ingredient garlicpaste = new Ingredient("Garlic Paste");
+        ingredientRepository.save(garlicpaste);
+        Quantity garlicpastes = new Quantity(10, "gr", garlicpaste, recipe4);
+        quantityRepository.save(garlicpastes);
+
+
+        //Q&I
+        Ingredient egg = new Ingredient("Egg");
+        ingredientRepository.save(egg);
+        Quantity eggs = new Quantity(0.5, "Half an egg", egg, recipe4);
+        quantityRepository.save(eggs);
+
+
+        //Q&I
+        Ingredient vegetableOil = new Ingredient("Vegetable Oil");
+        ingredientRepository.save(vegetableOil);
+        Quantity vegetableOils = new Quantity(0, "Adequate Amount For Deep Frying", vegetableOil, recipe4);
+        quantityRepository.save(vegetableOils);
+
+        //Q&I
+        Ingredient flour = new Ingredient("Flour");
+        ingredientRepository.save(flour);
+        Quantity flours = new Quantity(40, "gr", flour, recipe4);
+        quantityRepository.save(flours);
+
+        //Instructions
+        // DON'T DELETE \n it looks weird I know but you need for it to go onto the next line
+        Instruction instruction14 = new Instruction(1,
+                "In a large bowl, combine the chicken, sake, sugar, soy sauce, ginger, and \n" +
+                        "garlic. Mix well. Cover with plastic and marinate for at least 15 minutes \n" +
+                        "in the fridge.\n", recipe4);
+        instructionRepository.save(instruction14);
+
+        Instruction instruction15 = new Instruction(2, "Add the egg and potato starch to the chicken.", recipe3);
+        instructionRepository.save(instruction15);
+
+        Instruction instruction16 = new Instruction(3, "Heat the oil to 340˚F (170˚C). Fry the chicken until golden brown \n" +
+                " and fully cooked, 5-7 minutes.\n", recipe4);
+        instructionRepository.save(instruction16);
 
     }
 
