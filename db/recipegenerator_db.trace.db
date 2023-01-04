@@ -67,3 +67,12 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:108)
 	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-01-04 20:23:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]RECIPES INSTRUCTIONS RECIPES"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+RECIPES INSTRUCTIONS RECIPES [42001-214]
+2023-01-04 20:23:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]QUANTITIES"; SQL statement:
+QUANTITIES [42000-214]
+2023-01-04 20:23:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]QUANTITIES"; SQL statement:
+QUANTITIES [42000-214]

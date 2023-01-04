@@ -371,6 +371,82 @@ public class DataLoader implements ApplicationRunner {
                 " and fully cooked, 5-7 minutes.\n", recipe4);
         instructionRepository.save(instruction16);
 
+        //Gluten-free blueberry bread recipe
+        Recipe recipe5 =new Recipe("Blueberry Oat Bread", "https://www.laurafuentes.com/wp-content/uploads/2020/09/Blueberry-Bread-with-Oats-post-6.jpg",
+                "Healthy and fun gluten-free breakfast choice that works for everyone!", 4, 5, DietType.GLUTEN_FREE, CuisineType.AMERICAN, MealType.BREAKFAST);
+        recipeRepository.save(recipe5);
+
+        //Q&I
+        Ingredient oatFlour = new Ingredient("Oat Flour");
+        ingredientRepository.save(oatFlour);
+        Quantity oatFlours = new Quantity(400, "gr", oatFlour, recipe5);
+        quantityRepository.save(oatFlours);
+
+        //Q&I
+        Ingredient blueberry = new Ingredient("Blueberry");
+        ingredientRepository.save(blueberry);
+        Quantity blueberries = new Quantity(150, "gr", blueberry, recipe5);
+        quantityRepository.save(blueberries);
+
+
+        //Q&I
+        Ingredient bakingPowder = new Ingredient("Baking Powder");
+        ingredientRepository.save(bakingPowder);
+        Quantity bakingPowders = new Quantity(10, "gr", bakingPowder, recipe5);
+        quantityRepository.save(bakingPowders);
+
+
+        //Q&I
+        Ingredient honey = new Ingredient("Honey");
+        ingredientRepository.save(honey);
+        Quantity honeys = new Quantity(2, "tbsp", honey, recipe5);
+        quantityRepository.save(honeys);
+
+
+        //Q&I
+//        the second time for eggs
+
+        Quantity eggs2 = new Quantity(2, "Whole", egg, recipe5);
+        quantityRepository.save(eggs2);
+
+
+        //Q&I
+        Ingredient coconutOil = new Ingredient("Coconut Oil");
+        ingredientRepository.save(coconutOil);
+        Quantity coconutOils = new Quantity(100, "ml", coconutOil, recipe5);
+        quantityRepository.save(coconutOils);
+
+        //Q&I
+        Ingredient banana = new Ingredient("Banana");
+        ingredientRepository.save(banana);
+        Quantity bananas = new Quantity(2, "Whole", banana, recipe5);
+        quantityRepository.save(bananas);
+
+        //Instructions
+        // DON'T DELETE \n it looks weird I know but you need for it to go onto the next line
+        Instruction instruction17 = new Instruction(1,
+                "Preheat the oven to 180 degree. Line a 9 x 5-inch (23 x 10cm) loaf pan with parchment paper.\n", recipe5);
+        instructionRepository.save(instruction17);
+
+        Instruction instruction18 = new Instruction(2, "In a large bowl, whisk together the oat flour, baking powder and salt.\n", recipe5);
+        instructionRepository.save(instruction18);
+
+        Instruction instruction19 = new Instruction(3, "In a blender, place the honey, banana, coconut oil and eggs.\n" +
+                "Blend on medium speed until the ingredients are combined,\n" + " and you have a smooth, frothy texture. \n", recipe5);
+        instructionRepository.save(instruction19);
+
+        Instruction instruction20 = new Instruction(4, "Pour the wet mixture into the dry ingredient bowl,\n" +
+                "and slowly whisk until combined. Add in the oats, and mix,\n" + "then gently fold in the blueberries into the batter.\n", recipe5);
+        instructionRepository.save(instruction20);
+
+        Instruction instruction21 = new Instruction(5, "Pour the batter into the pan and bake 45 – 55 minutes or \n" +
+                "until a toothpick comes out clean. If your bread loaf is looking \n" + "golden around minute 35, cover with a piece of tin foil.\n", recipe5);
+        instructionRepository.save(instruction21);
+
+        Instruction instruction22 = new Instruction(6, "Remove the loaf from the oven and allow it to cool down \n" +
+                "in the pan for 10 minutes before lifting the parchment paper \n" + "out of the pan and slicing the blueberry loaf.\n", recipe5);
+        instructionRepository.save(instruction22);
+
     }
 
 }

@@ -8,5 +8,7 @@ public enum CuisineType {
     ITALIAN,
     FRENCH,
     SPANISH,
+
+    AMERICAN,
     PAKISTANI;
 }
