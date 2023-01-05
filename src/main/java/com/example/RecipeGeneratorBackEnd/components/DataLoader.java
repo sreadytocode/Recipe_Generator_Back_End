@@ -305,9 +305,10 @@ public class DataLoader implements ApplicationRunner {
         instructionRepository.save(instruction13);
 
 /////////////////////////////////////////
+
         //End of file or add new recipe below
        //Japanese fried chicken recipe
-        Recipe recipe4 =new Recipe("Japanese fried chicken", "https://i8b2m3d9.stackpathcdn.com/wp-content/uploads/2022/02/Karaage_Chicken_7349.jpg","With hint of garlic and soy sauce, Japanese fried chicken (kara-age) is one of the most popular dishes in Japan.", 4, 4, DietType.NONE, CuisineType.JAPANESE, MealType.DINNER);
+        Recipe recipe4 =new Recipe("Japanese fried chicken", "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_karaage_with_47513_16x9.jpg","With hint of garlic and soy sauce, Japanese fried chicken (kara-age) is one of the most popular dishes in Japan.", 4, 4, DietType.NONE, CuisineType.JAPANESE, MealType.DINNER);
         recipeRepository.save(recipe4);
 
         //Q&I
@@ -370,6 +371,8 @@ public class DataLoader implements ApplicationRunner {
         Instruction instruction16 = new Instruction(3, "Heat the oil to 340˚F (170˚C). Fry the chicken until golden brown \n" +
                 " and fully cooked, 5-7 minutes.\n", recipe4);
         instructionRepository.save(instruction16);
+
+/////////////////////////////////////////
 
         //Gluten-free blueberry bread recipe
         Recipe recipe5 =new Recipe("Blueberry Oat Bread", "https://www.laurafuentes.com/wp-content/uploads/2020/09/Blueberry-Bread-with-Oats-post-6.jpg",
@@ -447,9 +450,11 @@ public class DataLoader implements ApplicationRunner {
                 "in the pan for 10 minutes before lifting the parchment paper \n" + "out of the pan and slicing the blueberry loaf.\n", recipe5);
         instructionRepository.save(instruction22);
 
+/////////////////////////////////////////
+
         //Keto veggie breakfast bake recipe
         Recipe recipe6 = new Recipe("Vegetable Breakfast Bake",
-                "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1201575_11-aa3f8c6.jpg?quality=90&webp=true&resize=440,400",
+                "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/the_ultimate_vegan_12214_16x9.jpg",
                 "Hit 3 of your 5-a-day with this alternative fry-up - it's packed with vegetables and easy oven-baked.",
                 4, 3, DietType.KETO, CuisineType.ITALIAN, MealType.BREAKFAST);
         recipeRepository.save(recipe6);
@@ -507,6 +512,200 @@ public class DataLoader implements ApplicationRunner {
         Instruction instruction27 = new Instruction(5, "Return to the oven and cook for a further 8-10 mins \n" +
                 "or until the egg is cooked to your liking.\n", recipe6);
         instructionRepository.save(instruction27);
+
+/////////////////////////////////////////
+// Salsa Verde Pinto Beans
+
+        Recipe recipe7 = new Recipe("Salsa Verde Pinto Beans", "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/chipotle_pinto_bean_stew_94139_16x9.jpg", "There are a couple of options when it comes to making the salsa verde.\n" +
+                "              For a bit of texture, and stress relief, finely chop it with your best knife,\n" +
+                "              or else use a food processor or blender. Serve with toasted ciabatta.", 4, 4, DietType.VEGAN, CuisineType.ITALIAN, MealType.DINNER);
+        recipeRepository.save(recipe7);
+
+        //Q&I
+        Ingredient tomatillo = new Ingredient("Tomatillos");
+        ingredientRepository.save(tomatillo);
+        Quantity tomatillos = new Quantity(450, "gr", tomatillo, recipe7);
+        quantityRepository.save(tomatillos);
+
+        //Q&I
+        Ingredient jalapenoPepper = new Ingredient("Jalapeno Pepper");
+        ingredientRepository.save(jalapenoPepper);
+        Quantity jalapenoPeppers = new Quantity(25, "gr", jalapenoPepper, recipe7);
+        quantityRepository.save(jalapenoPeppers);
+
+        //Q&I
+        Ingredient bellPepper = new Ingredient("Bell Pepper");
+        ingredientRepository.save(bellPepper);
+        Quantity bellPeppers = new Quantity(100, "gr", bellPepper, recipe7);
+        quantityRepository.save(bellPeppers);
+
+        //Q&I
+        Quantity garlicCloves5 = new Quantity(20, "gr", garlicClove, recipe7);
+        quantityRepository.save(garlicCloves5);
+
+        //Q&I
+        Ingredient pintoBean = new Ingredient("Pinto Beans");
+        ingredientRepository.save(pintoBean);
+        Quantity pintoBeans = new Quantity(450, "gr", pintoBean, recipe7);
+        quantityRepository.save(pintoBeans);
+
+        //Q&I
+        Ingredient lime = new Ingredient("Lime");
+        ingredientRepository.save(lime);
+        Quantity limes = new Quantity(20, "gr", lime, recipe7);
+        quantityRepository.save(limes);
+
+        //Q&I
+        Ingredient whiteOnion = new Ingredient("White Onion");
+        ingredientRepository.save(whiteOnion);
+        Quantity whiteOnions = new Quantity(125, "gr", whiteOnion, recipe7);
+        quantityRepository.save(whiteOnions);
+
+        //Q&I
+        Ingredient water = new Ingredient("Water");
+        ingredientRepository.save(water);
+        Quantity waters = new Quantity(7, "Cups", water, recipe7);
+        quantityRepository.save(waters);
+
+        //Q&I
+        Ingredient salt = new Ingredient("Salt");
+        ingredientRepository.save(salt);
+        Quantity salts = new Quantity(7, "gr", salt, recipe7);
+        quantityRepository.save(salts);
+
+        //Instructions
+        Instruction instruction28 = new Instruction(1, "Preheat broiler to high heat for at least 10-minutes", recipe7);
+        instructionRepository.save(instruction28);
+
+        Instruction instruction29 = new Instruction(2, "Arrange the tomatillos, jalapeno, poblano pepper,\n" +
+                "                                     and Serrano pepper on a baking sheet and broil in the top half\n" +
+                "                                    of the oven for 10-15 minutes, flipping the peppers halfway through,\n" +
+                "                                     until browned.", recipe7);
+        instructionRepository.save(instruction29);
+
+        Instruction instruction30 = new Instruction(3, "Transfer to a large pot with a lid. Add the pinto beans,\n" +
+                "                                    white onion, and water.", recipe7);
+        instructionRepository.save(instruction30);
+
+        Instruction instruction31 = new Instruction(4, "Bring to a boil then reduce heat so that the water gently\n" +
+                "                                      boils up from the center. Cover and cook for at least 1 1/2 to 2 1/2 hours\n" +
+                "                                     or until tender.", recipe7);
+        instructionRepository.save(instruction31);
+
+        Instruction instruction32 = new Instruction(5, "Just prior to serving stir in the salt. Serve warm with chopped\n" +
+                "                                     cilantro and lime wedges.", recipe7);
+        instructionRepository.save(instruction32);
+
+/////////////////////////////////////////
+
+// Chicken bhuna
+
+        Recipe recipe8 = new Recipe("Chicken bhuna", "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/bhuna_murgh_masala_90385_16x9.jpg", "The word ‘bhuna’ means to fry and, in this recipe, it is key to fry the onions and tomatoes really well until the oil begins to leave the sides of the pan. The secret to a really good chicken bhuna is to not add any water as all the flavour comes from the spices and onions.", 5, 4, DietType.NONE, CuisineType.PAKISTANI, MealType.DINNER);
+        recipeRepository.save(recipe8);
+
+        //Q&I
+        Quantity garlicCloves6 = new Quantity(6, "Whole", garlicClove, recipe8);
+        quantityRepository.save(garlicCloves6);
+
+        //Q&I
+        Ingredient ginger = new Ingredient("Ginger");
+        ingredientRepository.save(ginger);
+        Quantity gingers = new Quantity(1, "Whole", ginger, recipe8);
+        quantityRepository.save(gingers);
+
+        //Q&I
+        Ingredient chilliPowder = new Ingredient("Chilli Powder");
+        ingredientRepository.save(chilliPowder);
+        Quantity chilliPowders = new Quantity(3, "Whole", chilliPowder, recipe8);
+        quantityRepository.save(chilliPowders);
+
+        //Q&I
+        Ingredient turmeric = new Ingredient("Turmeric");
+        ingredientRepository.save(turmeric);
+        Quantity turmerics = new Quantity(1, "tsp", turmeric, recipe8);
+        quantityRepository.save(turmerics);
+
+        //Q&I
+        Quantity groundCumin1 = new Quantity(1, "tsp", cumin, recipe8);
+        quantityRepository.save(groundCumin1);
+
+        //Q&I
+        Ingredient coriander = new Ingredient("Coriander");
+        ingredientRepository.save(coriander);
+        Quantity corianders = new Quantity(1, "tbsp", coriander, recipe8);
+        quantityRepository.save(corianders);
+
+        //Q&I
+        Ingredient garamMasala = new Ingredient("Garam Masala");
+        ingredientRepository.save(garamMasala);
+        Quantity garamMasalas = new Quantity(1, "tsp", garamMasala, recipe8);
+        quantityRepository.save(garamMasalas);
+
+        //Q&I
+        Quantity blackPeppers1 = new Quantity(0.5, "tsp", blackPepper, recipe8);
+        quantityRepository.save(blackPeppers1);
+
+        //Q&I
+        Ingredient greekYoghurt = new Ingredient("Greek Yoghurt");
+        ingredientRepository.save(greekYoghurt);
+        Quantity greekYoghurts = new Quantity(2, "tbsp", greekYoghurt, recipe8);
+        quantityRepository.save(greekYoghurts);
+
+        //Q&I
+        Ingredient chickenThigh = new Ingredient("Chicken Thigh");
+        ingredientRepository.save(chickenThigh);
+        Quantity chickenThighs = new Quantity(750, "gr", chickenThigh, recipe8);
+        quantityRepository.save(chickenThighs);
+
+        //Q&I
+        Quantity tomatoes1 = new Quantity(100, "gr", tomato, recipe8);
+        quantityRepository.save(tomatoes1);
+
+        //Q&I
+        Ingredient tomatoPuree = new Ingredient("Tomato Puree");
+        ingredientRepository.save(tomatoPuree);
+        Quantity tomatoPurees = new Quantity(2, "tbsp", tomatoPuree, recipe8);
+        quantityRepository.save(tomatoPurees);
+
+        //Q&I
+        Quantity vegetableOils1 = new Quantity(4, "tbsp", vegetableOil, recipe8);
+        quantityRepository.save(vegetableOils1);
+
+        //Q&I
+        Quantity greenChillis = new Quantity(6, "Whole", greenChilli, recipe8);
+        quantityRepository.save(greenChillis);
+
+        //Q&I
+        Ingredient brownOnion = new Ingredient("Brown Onion");
+        ingredientRepository.save(brownOnion);
+        Quantity brownOnions = new Quantity(6, "Whole", brownOnion, recipe8);
+        quantityRepository.save(brownOnions);
+
+        //Q&I
+        Quantity freshCoriander = new Quantity(1, "Fresh chopped", coriander, recipe8);
+        quantityRepository.save(corianders);
+
+        //Instructions
+
+        Instruction instruction33 = new Instruction(1, "To make the marinade, blend the garlic, ginger and a splash of water to a smooth paste in a food processor or blender. \n " +
+                "Put in a large bowl with the remaining marinade ingredients, except the chicken, and mix to combine. \n " +
+                "Add the chicken to the bowl and mix well. Leave to marinate for 1 hour, or overnight preferably.", recipe8);
+        instructionRepository.save(instruction33);
+
+        Instruction instruction34 = new Instruction(2, "To make the bhuna, blend the tomatoes and tomato purée to a smooth paste in a food processor or blender, then set aside. \n " +
+                "Heat the oil in a non-stick kadhai or large lidded frying pan over a medium heat. Add the chillies, fry for a few seconds then add the onions. Stir well and fry gently for 25 minutes, until browned and softened. \n " +
+                "Keep stirring often to make sure they cook evenly.", recipe8);
+        instructionRepository.save(instruction34);
+
+        Instruction instruction35 = new Instruction(3, "Add the blended tomato paste, stir and fry for 5 minutes. \n " +
+                "Add the marinated chicken and cook for 6 minutes, stirring so the chicken is well coated in the masala. \n " +
+                "Season with salt, lower the heat and continue cooking with a lid on for 8 minutes until the chicken is cooked through, stirring halfway through. \n " +
+                "Add the fennel, pepper and garam masala and stir. Garnish with coriander and cook for a couple of minutes. \n " +
+                "Serve immediately.", recipe8);
+        instructionRepository.save(instruction35);
+
+/////////////////////////////////////////
+//        Add new recipe here
 
     }
 
