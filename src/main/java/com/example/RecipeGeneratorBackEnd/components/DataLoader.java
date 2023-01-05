@@ -305,6 +305,7 @@ public class DataLoader implements ApplicationRunner {
         instructionRepository.save(instruction13);
 
 /////////////////////////////////////////
+
         //End of file or add new recipe below
        //Japanese fried chicken recipe
         Recipe recipe4 =new Recipe("Japanese fried chicken", "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_karaage_with_47513_16x9.jpg","With hint of garlic and soy sauce, Japanese fried chicken (kara-age) is one of the most popular dishes in Japan.", 4, 4, DietType.NONE, CuisineType.JAPANESE, MealType.DINNER);
@@ -370,6 +371,8 @@ public class DataLoader implements ApplicationRunner {
         Instruction instruction16 = new Instruction(3, "Heat the oil to 340˚F (170˚C). Fry the chicken until golden brown \n" +
                 " and fully cooked, 5-7 minutes.\n", recipe4);
         instructionRepository.save(instruction16);
+
+/////////////////////////////////////////
 
         //Gluten-free blueberry bread recipe
         Recipe recipe5 =new Recipe("Blueberry Oat Bread", "https://www.laurafuentes.com/wp-content/uploads/2020/09/Blueberry-Bread-with-Oats-post-6.jpg",
@@ -446,6 +449,8 @@ public class DataLoader implements ApplicationRunner {
         Instruction instruction22 = new Instruction(6, "Remove the loaf from the oven and allow it to cool down \n" +
                 "in the pan for 10 minutes before lifting the parchment paper \n" + "out of the pan and slicing the blueberry loaf.\n", recipe5);
         instructionRepository.save(instruction22);
+
+/////////////////////////////////////////
 
         //Keto veggie breakfast bake recipe
         Recipe recipe6 = new Recipe("Vegetable Breakfast Bake",
