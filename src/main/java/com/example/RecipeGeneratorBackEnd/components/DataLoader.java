@@ -447,6 +447,67 @@ public class DataLoader implements ApplicationRunner {
                 "in the pan for 10 minutes before lifting the parchment paper \n" + "out of the pan and slicing the blueberry loaf.\n", recipe5);
         instructionRepository.save(instruction22);
 
+        //Keto veggie breakfast bake recipe
+        Recipe recipe6 = new Recipe("Vegetable Breakfast Bake",
+                "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1201575_11-aa3f8c6.jpg?quality=90&webp=true&resize=440,400",
+                "Hit 3 of your 5-a-day with this alternative fry-up - it's packed with vegetables and easy oven-baked.",
+                4, 3.5, DietType.KETO, CuisineType.ITALIAN, MealType.BREAKFAST);
+        recipeRepository.save(recipe6);
+
+
+        //Q&I
+        Ingredient largeFieldMushroom = new Ingredient("Large Field Mushroom");
+        ingredientRepository.save(largeFieldMushroom);
+        Quantity largeFieldMushrooms = new Quantity(4, "Whole", largeFieldMushroom, recipe6);
+        quantityRepository.save(largeFieldMushrooms);
+
+        //Q&I
+        Quantity garlicCloves4 = new Quantity(1, "Whole", garlicClove, recipe6);
+        quantityRepository.save(garlicCloves4);
+
+        //Q&I
+
+        Quantity oliveOil3 = new Quantity(2, "tsp", oliveOil, recipe6);
+        quantityRepository.save(oliveOil3);
+
+
+        //Q&I
+        Ingredient tomato = new Ingredient("Tomatoes");
+        ingredientRepository.save(tomato);
+        Quantity tomatoes = new Quantity(8, "Whole", tomato, recipe6);
+        quantityRepository.save(tomatoes);
+
+        //Q&I
+        Ingredient spinach = new Ingredient("Spinach");
+        ingredientRepository.save(spinach);
+        Quantity spinachs = new Quantity(200, "gr", spinach, recipe6);
+        quantityRepository.save(spinachs);
+
+        //Q&I
+        Quantity eggs3 = new Quantity(4, "Whole", egg, recipe6);
+        quantityRepository.save(eggs3);
+
+
+        //Instructions
+        Instruction instruction23 = new Instruction(1, "Heat oven to 200C/180C fan/gas 6. Put the mushrooms and tomatoes \n" + "into 4 ovenproof dishes.\n", recipe6);
+        instructionRepository.save(instruction23);
+
+        Instruction instruction24 = new Instruction(2, "Divide sliced garlic between the dishes, drizzle over \n" +
+                "the oil and some seasoning, then bake for 10 mins.\n", recipe6);
+        instructionRepository.save(instruction24);
+
+        Instruction instruction25 = new Instruction(3, "Meanwhile, put the spinach into a large colander, then pour over \n" +
+                "a kettle of boiling water to wilt it. Squeeze out \n" + "any excess water, then add the spinach to the dishes.\n", recipe6);
+        instructionRepository.save(instruction25);
+
+        Instruction instruction26 = new Instruction(4, "Make a little gap between the vegetables and crack an egg \n" +
+                "into each dish.\n", recipe6);
+        instructionRepository.save(instruction26);
+
+        Instruction instruction27 = new Instruction(5, "Return to the oven and cook for a further 8-10 mins \n" +
+                "or until the egg is cooked to your liking.\n", recipe6);
+        instructionRepository.save(instruction27);
+
     }
 
 }
