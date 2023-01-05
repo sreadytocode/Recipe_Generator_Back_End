@@ -451,7 +451,7 @@ public class DataLoader implements ApplicationRunner {
         Recipe recipe6 = new Recipe("Vegetable Breakfast Bake",
                 "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1201575_11-aa3f8c6.jpg?quality=90&webp=true&resize=440,400",
                 "Hit 3 of your 5-a-day with this alternative fry-up - it's packed with vegetables and easy oven-baked.",
-                4, 3.5, DietType.KETO, CuisineType.ITALIAN, MealType.BREAKFAST);
+                4, 3, DietType.KETO, CuisineType.ITALIAN, MealType.BREAKFAST);
         recipeRepository.save(recipe6);
 
 
