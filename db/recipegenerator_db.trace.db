@@ -76,3 +76,12 @@ QUANTITIES [42000-214]
 2023-01-04 20:23:59 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]QUANTITIES"; SQL statement:
 QUANTITIES [42000-214]
+2023-01-05 07:15:29 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]RECIPE_ID"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+RECIPE_ID [42001-214]
+2023-01-05 07:15:36 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]STEP"; expected "SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+STEP [42001-214]
+2023-01-05 07:16:07 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]STEP"; expected "SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+STEP [42001-214]
