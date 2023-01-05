@@ -307,7 +307,7 @@ public class DataLoader implements ApplicationRunner {
 /////////////////////////////////////////
         //End of file or add new recipe below
        //Japanese fried chicken recipe
-        Recipe recipe4 =new Recipe("Japanese fried chicken", "https://i8b2m3d9.stackpathcdn.com/wp-content/uploads/2022/02/Karaage_Chicken_7349.jpg","With hint of garlic and soy sauce, Japanese fried chicken (kara-age) is one of the most popular dishes in Japan.", 4, 4, DietType.NONE, CuisineType.JAPANESE, MealType.DINNER);
+        Recipe recipe4 =new Recipe("Japanese fried chicken", "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_karaage_with_47513_16x9.jpg","With hint of garlic and soy sauce, Japanese fried chicken (kara-age) is one of the most popular dishes in Japan.", 4, 4, DietType.NONE, CuisineType.JAPANESE, MealType.DINNER);
         recipeRepository.save(recipe4);
 
         //Q&I
@@ -449,7 +449,7 @@ public class DataLoader implements ApplicationRunner {
 
         //Keto veggie breakfast bake recipe
         Recipe recipe6 = new Recipe("Vegetable Breakfast Bake",
-                "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1201575_11-aa3f8c6.jpg?quality=90&webp=true&resize=440,400",
+                "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/the_ultimate_vegan_12214_16x9.jpg",
                 "Hit 3 of your 5-a-day with this alternative fry-up - it's packed with vegetables and easy oven-baked.",
                 4, 3, DietType.KETO, CuisineType.ITALIAN, MealType.BREAKFAST);
         recipeRepository.save(recipe6);
